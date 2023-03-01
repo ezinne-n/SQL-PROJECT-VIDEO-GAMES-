@@ -1,0 +1,7 @@
+--How many games in the game_sales table are missing both a user_score and a critic_score
+
+  SELECT COUNT( game_sales$.Name)
+FROM [dbo].[game_sales$]
+LEFT JOIN [dbo].[game_reviews$]
+ON [dbo].[game_sales$].Name=[dbo].[game_reviews$].Name
+WHERE critic_score IS NULL AND user_score IS NULL;
