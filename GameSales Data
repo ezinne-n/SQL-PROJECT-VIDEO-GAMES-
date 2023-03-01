@@ -1,0 +1,9 @@
+--The ten best-selling video games
+SELECT TOP (10) Name
+      ,Platform
+      ,Publisher
+      ,Developer
+      ,Total_Shipped
+      ,Year
+  FROM game_sales$
+  ORDER BY Total_Shipped DESC
