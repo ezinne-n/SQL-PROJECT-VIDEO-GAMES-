@@ -1,0 +1,6 @@
+--Years that both players and critics loved
+SELECT Year
+FROM [dbo].[top_critic_scores_more_than_fou$]
+INTERSECT
+SELECT Year
+FROM [dbo].[top_user_scores_more_than_four_$]
