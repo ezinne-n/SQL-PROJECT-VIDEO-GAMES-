@@ -1,0 +1,12 @@
+
+ --Years that video game critics loved
+
+ 
+ SELECT[dbo].[game_sales$].Year,ROUND(AVG([dbo].[game_reviews$].[Critic_Score]),2) AS avg_critic_score
+FROM[dbo].[game_sales$]
+INNER JOIN [dbo].[game_reviews$]
+ON [dbo].[game_sales$].Name=[dbo].[game_reviews$].Name
+GROUP BY [dbo].[game_sales$].Year
+ORDER BY avg_critic_score DESC
+OFFSET 0 ROWS
+FETCH FIRST 10 ROWS ONLY
